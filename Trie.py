@@ -1,4 +1,3 @@
-
 class Node:
         def __init__(self,value):
                 self.value = value
@@ -10,8 +9,6 @@ class Node:
 
         def __repr__(self):
                 return str(self.value)
-
-
 
 def inorder(root):
         print(root)
@@ -29,7 +26,6 @@ def guessfun(node,word,words):
                         next = True
                         guessfun(node.next[chr(i)],word,words)
         
-
 def guess(root,word):
         words = []
         guessfun(root,word,words)
@@ -66,23 +62,16 @@ def createTree():
         file.close()
         print('Done.')
 
-def loadPickle():
-        file = open('example','rb')
-        Root = pickle.load(file)
-        print(Root.next['t'].next)
-        file.close()
-        return Root 
-
-
 Root = Node(0)
 text = ''
 createTree()
+print("Enter exit() to end program.")
 while(True):
         # Root = loadPickle()
         
         print('Enter part word and then press enter for word suggestions')
         word = list(input())
-        if word == '0':
+        if word=="exit()":
                 break
         current = Root
         for i in range(len(word)):
